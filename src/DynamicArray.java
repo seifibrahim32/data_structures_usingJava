@@ -129,15 +129,21 @@ public class DynamicArray {
         }
         public static void main(String... args){
             IntArray ar = new IntArray(50);
+
+
             ar.add(3);
             ar.add(7);
-
             ar.add(6);
             ar.add(-2);
-
             ar.sort(); // [-2, 3, 6, 7]
             ar.removeAt(1);
 
+            /*
+            java.util.Iterator<Integer> iterator = ar.iterator();
+            while(iterator.hasNext()){
+                System.out.println(iterator.next());
+            }
+             */
             // Prints [-2, 3, 6, 7]
             for (int i = 1; i <= ar.size(); i++) System.out.print (ar.get(i) + " ");
 
