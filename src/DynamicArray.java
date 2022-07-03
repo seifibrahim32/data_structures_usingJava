@@ -130,7 +130,6 @@ public class DynamicArray {
         public static void main(String... args){
             IntArray ar = new IntArray(50);
 
-
             ar.add(3);
             ar.add(7);
             ar.add(6);
@@ -149,7 +148,8 @@ public class DynamicArray {
 
             // Prints [-2, 3, 6, 7]
             System.out.println(
-                    Arrays.toString(Arrays.stream(Arrays.stream(IntArray.arr).toArray()).filter(
+                    Arrays.toString(
+                            Arrays.stream(Arrays.stream(IntArray.arr).toArray()).filter(
                      x -> x!=0
             ).toArray()));
         }
