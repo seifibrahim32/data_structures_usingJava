@@ -267,5 +267,12 @@ public class DoublyLinkedList {
     }
     public static void main(String... args){
 
+        DLinkedList<Integer> node = new DLinkedList<Integer>();
+
+        node.add(5);
+        node.add(6);
+
+        System.out.println(node.toString());
+
     }
 }
