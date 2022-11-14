@@ -6,7 +6,7 @@ public class Queue {
     public static class QueueLinkedList<T> implements Iterable<T> {
 
         public static LinkedList list;
-        public static QueueLinkedList<Object> _instance = null;
+        public volatile static QueueLinkedList<Object> _instance = null;
         private QueueLinkedList(){
 
         }
@@ -14,8 +14,10 @@ public class Queue {
         public static QueueLinkedList<Object> getInstance(){
 
              if(_instance == null){
-                 _instance = new QueueLinkedList<>();
-                 list = new LinkedList<>();
+                 synchronized (QueueLinkedList.class) {
+                     _instance = new QueueLinkedList<>();
+                     list = new LinkedList<>();
+                 }
              }
              return _instance;
         }
